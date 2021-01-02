@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+<div class = 'container show'>
+
+    <div class = "main-background"></div>
+
+    
+        <header class="jumbotron index-header-wrap">
+            <div class = "container">
+                <img class = "logo-image-index" src = 'https://cdn.pixabay.com/photo/2016/01/21/21/23/rose-1154830_1280.png'/>
+                <h1 class = 'text-center'>
+                    Hello <%= userData.username %>
+                </h1>
+                <p class = 'text-center'>
+                    You have <%= postData.length %> upload(s)
+                </p>
+                <p class = 'text-center'>
+                    <a class = "btn btn-primary btn-lg" href = "/campgrounds/new">Add a picture</a>
+                </p>
+            </div>
+        </header>
+
+        <div class = "row text-center" style = "display:flex flex-wrap">
+            <% postData.forEach(function(campground){ %>
+            <div class = "col-md-3 col-sm-6 a-tag-text">
+                <a href = "/campgrounds/<%= campground._id %>">
+                    <div class = "card-index">
+                        <div class = "index-img-wrap">
+                            <img class = "index-image" src = "<%= campground.image %>">
+                        </div>
+                        <div class = "card-caption-index">
+                            <h4>
+                                <%= campground.name %>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+<%- include('../partials/blog_footer.ejs'); -%>

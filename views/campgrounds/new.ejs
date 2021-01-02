@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+<div class = "container">
+
+	<div class = "background-image-wrap"></div>
+
+	<div class = "user-wrap">
+		<h1 style = "text-align:center">
+		Add Image URL!
+		</h1>
+		<div>
+			<form action = "/campgrounds" Method = "POST" class = "user-form-wrap">
+				<div>
+					<input type = "text" name = "name" placeholder = "name">
+				</div>
+				<div>
+					<input type = "text" name = "image" placeholder = "image url">
+				</div>
+				<div>
+					<input type = "text" name = "description" placeholder = "description">
+				</div>
+				<div class = "auth-button-wrap" style = "flex-direction: column; align-items: center;">
+					<button class = "btn btn-large btn-primary btn-block">
+						Submit
+					</button>
+					<a href = "/" style = "margin-top: 15px;">Main Page</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<%- include("../partials/footer") %>

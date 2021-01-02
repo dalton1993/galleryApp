@@ -1,0 +1,28 @@
+<%- include("../partials/header") %>
+
+
+<div class = "container show">
+
+<div class = "main-background"></div>
+
+<div class = "row text-center" style = "display:flex flex-wrap">
+	<% campgrounds.forEach(function(campground){ %>
+	<div class = "col-md-3 col-sm-6 a-tag-text">
+		<a href = "/campgrounds/<%= campground._id %>">
+			<div class = "card-index">
+				<div class = "index-img-wrap">
+					<img class = "index-image" src = "<%= campground.image %>">
+				</div>
+				<div class = "card-caption-index">
+					<h4>
+						<%= campground.name %>
+					</h4>
+				</div>
+			</div>
+		</a>
+	</div>
+	<% }) %>
+</div>
+	
+</div>
+<%- include("../partials/footer") %>

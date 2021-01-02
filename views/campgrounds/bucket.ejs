@@ -1,0 +1,28 @@
+<%- include("../partials/header") %>
+
+<div class = "container show">
+
+    <div class = "main-background"></div>
+    
+    <div class = "row text-center" style = "display:flex flex-wrap">
+        <% bucket.forEach(function(item){ %>
+        <div class = "col-md-3 col-sm-6 a-tag-text">
+            <a href = "/campgrounds/<%= item._id %>">
+                <div class = "card-index">
+                    <div class = "index-img-wrap">
+                        <img class = "index-image" src = "<%= item.image %>">
+                    </div>
+                    <div class = "card-caption-index">
+                        <h4>
+                            <%= item.name %>
+                        </h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <% }) %>
+    </div>
+        
+    </div>
+
+<%- include("../partials/footer") %>

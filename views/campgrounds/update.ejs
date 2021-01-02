@@ -1,0 +1,34 @@
+<%- include("../partials/header") %>
+<div class = "container">
+
+	<div class = "main-background"></div>
+
+	
+		<div class = "user-wrap">
+
+			<h1 style = "text-align:center">
+				Edit <%= campground.name %>!
+			</h1>
+
+			<form action = "/campgrounds/<%= campground._id %>?_method=PUT" Method = "POST" class = "user-form-wrap">
+				<div>
+					<input type = "text" name = "name" value = "<%= campground.name %>">
+				</div>
+				<div>
+					<input type = "text" name = "image" value = "<%= campground.image %>">
+				</div>
+				<div>
+					<textarea type = "text" name = "description"><%= campground.description %></textarea>
+				</div>
+
+				<div class = "auth-button-wrap" style = "display: flex; flex-direction: column; align-items: center;">
+					<button class = "btn btn-large btn-primary btn-block">
+						Submit
+					</button>
+					<a href = "/" style = "margin-top: 10px;">Main Page</a>
+				</div>
+
+			</form>
+		</div>
+</div>
+<%- include("../partials/footer") %>

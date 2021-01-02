@@ -1,0 +1,96 @@
+<%- include("../partials/header") %>
+
+
+<div id = "js">
+	<% bucketItem = undefined %>
+
+	<% if(bucket){ %>
+		<%= bucketItem = bucket.posts.find( (post) => post.toString() == campground._id.toString() ) %>
+	<% } %>
+</div>
+
+<div class = "main-background"></div>
+
+<div class = "container show">
+	<div class = "row">
+		<div class = "col-md-3 side-show a-tag-text">
+			<p class = 'lead'>More from <%= campground.author.username %></p>
+			<div class = "image-show-related-container">
+				<div class = "thumbnail">
+					<% posts.forEach(function(item){ %>
+					<a href = "/campgrounds/<%= item._id %>">
+						<div class = "image-show-related">
+							<img src = "<%= item.image %>"/>
+						</div>
+					</a>
+
+					<div class = 'caption text-center'>
+						<p><%= item.name %></p>
+					</div>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+		<div class = "col-md-9">
+			<div class = "thumbnail">
+				<div class = "image-show-wrap">
+					<img class = "image-show" src = "<%=campground.image%>">
+				</div>
+				<div class = "caption-full">
+					<h4 class = "pull-right">Posted by: <%= campground.author.username %></h4>
+
+					<h4><a><%=campground.name%></a></h4>
+
+					<% if(bucketItem === undefined){ %>
+						<form id = "bucket-form" action = "/bucket/<%= currentUser._id %>/add-to-bucket/<%= campground._id %>" method = "POST">
+							<button class = "pull-right btn btn-primary">
+								Add to Bucket
+							</button>
+						</form>
+						<% } %>
+
+						<% if(bucketItem){ %>
+							<form id = "bucket-form" action = "/bucket/<%= currentUser._id %>/remove-from-bucket/<%= campground._id %>" method = "POST">
+								<button class = "pull-right btn btn-primary" btn btn-primary">
+									Remove from bucket
+								</button>
+							</form>
+						<% } %>
+
+					<p><%= campground.description %></p>
+
+					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+					<a class = "btn btn-warning" href = "/campgrounds/<%= campground.id %>/edit">Edit</a>
+					<form id = "delete-form" action = "/campgrounds/<%= campground._id %>?_method=DELETE" Method = "POST">
+						<button class = "btn btn-danger">Delete</button>
+					</form>
+					<% } %>
+				</div>
+			</div>
+			<div class = "well">
+				<div clas= "text-right">
+					<p><a class = "btn btn-success" href = "/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a></p>
+				</div>
+				<hr>
+					<% campground.comments.forEach(function(comment){ %>
+						<div class = "row" style = "margin-bottom: 25px;">
+							<div class = "col-md-12">
+								<p><strong><%= comment.author.username %></strong></p>
+								<p><%= comment.text %></p>
+								<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+								<a class = "btn btn-xs btn-primary" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit %>">Edit Comment</a>
+								<form class="delete" action = "/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method = "POST">
+									<button class = "btn btn-xs btn-danger">Delete</button>
+								</form>
+								<% } %>
+							</div>
+						</div>
+					<% }) %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<%- include("../partials/footer") %>

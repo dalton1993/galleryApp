@@ -1,0 +1,257 @@
+#js {
+    display: none;
+}
+
+.user-wrap {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:10px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.user-wrap h1 {
+    text-align: center;
+}
+
+.user-form-wrap {
+    display:flex;
+    flex-direction: column;
+    padding:30px;
+}
+
+.user-form-wrap input {
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid lightcoral;
+    margin:10px;
+    width:50rem;
+    background:none;
+    outline: none;
+    font-size: 20px;
+}
+
+.user-form-wrap textarea {
+    width:50rem;
+    resize: none;
+    background: none;
+    height:30rem;
+    margin: 10px;
+    border:1px solid lightcoral;
+}
+
+.auth-button-wrap {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-wrap button {
+    margin-top:20px;
+    width:7rem;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.search-wrap {
+    display:flex;
+    align-items: center;
+}
+
+@media screen and (max-width:1000px){
+    .side-show {
+        display:none; 
+    }
+}
+
+
+.thumbnail {
+    padding: 0; 
+}
+
+.thumbnail .caption-full {
+    padding: 9px; 
+}
+
+#delete-form {
+    display:inline; 
+}
+
+
+.delete {
+    display:inline; 
+}
+
+.background-image-wrap {
+    background-image: url('./images/bkg1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:fixed;
+    z-index: -100;
+    top:0;
+    width:100%;
+    height:100%; 
+}
+
+
+.landing-header{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255,255,255,0.5); 
+    z-index: 100;
+    padding:30px;
+    border-radius: 20px; 
+}
+
+.navbar {
+    margin:0;
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+}
+
+.a-tag-text a {
+    color:black;
+    text-decoration: none;
+}
+
+.image-show-related-container {
+    height:55rem;
+    overflow-y: scroll;
+}
+
+.image-show-related-container::-webkit-scrollbar {
+    background: none;
+    width:5px;
+}
+
+.image-show-related-container::-webkit-scrollbar-thumb {
+    background-color:rgb(23, 88, 163);
+    border-radius:3px; 
+}
+
+.image-show-related-container::-webkit-scrollbar-corner {
+    display: none;
+}
+
+.lead {
+    text-align: center;
+    border-radius: 12px;
+}
+
+.image-show-related {
+    width:100%;
+    height:20rem;
+}
+
+.image-show-related img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.show {
+    margin-top: 15rem;
+}
+
+.index-image {
+    max-width:15rem;
+    max-height: 25rem;
+    object-fit: cover;
+}
+
+.main-background {
+    background-image: url('./images/bkg2.jpg');
+    background-size: cover;
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: -100;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-image-index {
+    width:20rem;
+    height:14rem;
+    object-fit:contain;
+}
+
+.lead {
+    background-color:white;
+}
+
+.nav-add-post {
+    width:7rem;
+    height:7rem;
+    border-radius: 50%;
+    position: absolute;
+    right:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background:white;
+    border:1px solid black;
+    top:110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-index {
+    width:100%;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom:40px;
+    padding:10px;
+}
+
+.index-img-wrap{
+    width:100%;
+}
+
+.card-index .index-image {
+    min-width:100%;
+    height: 100%;
+    object-fit:cover; 
+    border-radius:15px;
+}
+
+@media screen and (max-width: 768px){
+    .index-image{
+        min-height:10rem;
+        max-height:50rem;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .index-image{
+        min-height:10rem;
+        max-height:50rem;
+    }
+}
+
+.image-show-wrap {
+    width:100%;
+    height:60rem;
+}
+
+.image-show {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
